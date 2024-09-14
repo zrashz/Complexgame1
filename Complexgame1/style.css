@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* How to Play Section */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Game Container */
+#game {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('3.webp'); /* Use a space-themed background */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Spaceship Styling */
+#spaceship {
+    width: 100px;
+    height: 100px;
+    background-image: url('spaceship.jpeg'); /* Correct image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Meteors (Obstacles) Styling */
+.meteor {
+    width: 60px;
+    height: 60px;
+    background-image: url('meteor.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -60px;
+    animation: meteorMove linear infinite;
+}
+
+/* Animate Meteors */
+@keyframes meteorMove {
+    to { top: 100vh; }
+}
+
+/* Score and Health Display */
+#score, #health {
+    position: absolute;
+    top: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+#score { left: 10px; }
+#health { right: 10px; }
